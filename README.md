@@ -1,5 +1,5 @@
 ## INSTALL SCRIPT 
-Instal Autoscript Premium by Toko VPN
+Install Autoscript Premium by Toko VPN
 ```
 apt update -y && apt upgrade -y && apt install -y && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && wget https://gmvpn.my.id/autoscript && chmod +x autoscript && ./autoscript
 ```
