@@ -3,7 +3,7 @@ Instal Autoscript Premium by Toko VPN
 ```
 apt update -y && apt upgrade -y && apt install -y && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && wget https://gmvpn.my.id/autoscript && chmod +x autoscript && ./autoscript
 ```
-## `BUY PREMIUM | VIP MEMBER!`
+## `BUY PREMIUM!`
 Toko VPN :
 
 <a href="https://wa.me/+628984880039" target="_blank">
@@ -62,7 +62,7 @@ Toko VPN :
 <img width="100%" alt="autoscript-vip" src="https://github.com/tokovpn/autoscript-vip/raw/main/images/autoscript-vip.jpg">
 <img width="100%" alt="sshpremium" src="https://github.com/tokovpn/autoscript-vip/raw/main/images/sshpremium.jpg">
 
-## `! MEKANISME PENYEWAAN AUTOSCRIPT MEMBER VIP 10K, 1 IP / BULAN !`
+## `MEKANISME PENYEWAAN!`
 - Script `VIP` Last Update `Version 2.4`, Semua Fitur Pada Menu Utama Sudah Dioptimalkan Sehingga Meminimalisir Adanya `BUG`<br>
 
 Hubungi Admin Melalui Whatsaap Atau Telegram, Kirim `IP VPS` Dan `Lakukan Proses Pembayaran!`. Setelah Berhasil IP Akan Diinputkan Oleh - Admin Toko VPN
