@@ -63,7 +63,7 @@ Toko VPN :
 <img width="100%" alt="sshpremium" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/sshpremium.jpg">
 
 ## `MEKANISME PENYEWAAN!`
-- Script `VIP` Last Update `Version 2.4`, Semua Fitur Pada Menu Utama Sudah Dioptimalkan Sehingga Meminimalisir Adanya `BUG`<br>
+- Autoscript Last Update `Version 2.4`, Semua Fitur Pada Menu Utama Sudah Dioptimalkan Sehingga Meminimalisir Adanya `BUG`<br>
 
 Hubungi Admin Melalui Whatsaap Atau Telegram, Kirim `IP VPS` Dan `Lakukan Proses Pembayaran!`. Setelah Berhasil IP Akan Diinputkan Oleh - Admin Gemilang Kinasih
 
