@@ -1,5 +1,5 @@
 ## INSTALL SCRIPT 
-Install Autoscript Premium by Toko VPN
+Install Autoscript Premium by Gemilang Kinasih
 ```
 apt update -y && apt upgrade -y && apt install -y && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && wget https://gmvpn.my.id/autoscript && chmod +x autoscript && ./autoscript
 ```
@@ -65,7 +65,7 @@ Toko VPN :
 ## `MEKANISME PENYEWAAN!`
 - Script `VIP` Last Update `Version 2.4`, Semua Fitur Pada Menu Utama Sudah Dioptimalkan Sehingga Meminimalisir Adanya `BUG`<br>
 
-Hubungi Admin Melalui Whatsaap Atau Telegram, Kirim `IP VPS` Dan `Lakukan Proses Pembayaran!`. Setelah Berhasil IP Akan Diinputkan Oleh - Admin Toko VPN
+Hubungi Admin Melalui Whatsaap Atau Telegram, Kirim `IP VPS` Dan `Lakukan Proses Pembayaran!`. Setelah Berhasil IP Akan Diinputkan Oleh - Admin Gemilang Kinasih
 
 
 
