@@ -59,8 +59,8 @@ Toko VPN :
 | Under Attack Mode   | OFF    |
 
 ## TAMPILAN MENU SCRIPT
-<img width="100%" alt="autoscript-vip" src="https://github.com/tokovpn/autoscript-vip/raw/main/images/autoscript-vip.jpg">
-<img width="100%" alt="sshpremium" src="https://github.com/tokovpn/autoscript-vip/raw/main/images/sshpremium.jpg">
+<img width="100%" alt="autoscript" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/autoscript.jpg">
+<img width="100%" alt="sshpremium" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/sshpremium.jpg">
 
 ## `MEKANISME PENYEWAAN!`
 - Script `VIP` Last Update `Version 2.4`, Semua Fitur Pada Menu Utama Sudah Dioptimalkan Sehingga Meminimalisir Adanya `BUG`<br>
