@@ -1,8 +1,14 @@
+<a id="readme-top"></a>
+
 <div align="center">
 
-<img src="https://img.shields.io/badge/GEMILANG%20KINASIH-AUTOSCRIPT-111111?style=for-the-badge&labelColor=000000" alt="Gemilang Kinasih Autoscript">
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:1E3A8A,100:2563EB&amp;height=220&amp;section=header&amp;text=GEMILANG%20KINASIH&amp;fontSize=42&amp;fontColor=ffffff&amp;fontAlignY=38&amp;animation=fadeIn&amp;desc=Premium%20VPN%20and%20Tunneling%20Auto%20Installer&amp;descAlignY=58&amp;descSize=18" width="100%" alt="Header banner">
 
-<h3>Premium VPN &amp; Tunneling Auto Installer</h3>
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=20&amp;pause=1200&amp;color=2563EB&amp;center=true&amp;vCenter=true&amp;width=600&amp;lines=Instalasi+VPN+%26+Tunneling+Otomatis;Cepat+%C2%B7+Stabil+%C2%B7+Aman;Fast+%C2%B7+Stable+%C2%B7+Secure" alt="Typing animation">
+
+<br><br>
 
 <img src="https://img.shields.io/badge/version-2.4-3b82f6?style=flat-square" alt="Version">
 <img src="https://img.shields.io/badge/status-maintained-16a34a?style=flat-square" alt="Maintained">
@@ -29,7 +35,13 @@
 
 <sub>Bahasa default README ini. Pilih badge <b>English</b> di atas untuk beralih bahasa.</sub>
 
+### Tentang Script
+
+Gemilang Kinasih Autoscript adalah script instalasi otomatis untuk membangun server VPN dan tunneling (SSH, OpenVPN, VMESS, VLESS, Trojan) dalam satu kali proses. Cocok digunakan oleh reseller maupun pengelola VPS pribadi yang ingin server siap pakai tanpa konfigurasi manual satu per satu.
+
 ### Instalasi
+
+Salin dan jalankan perintah berikut di terminal VPS (root access):
 
 ```bash
 apt update -y && apt upgrade -y && \
@@ -37,6 +49,8 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && \
 wget https://raw.githubusercontent.com/gemilangkinasih/autoscript/main/setup.sh && \
 chmod +x setup.sh && ./setup.sh
 ```
+
+Proses instalasi berjalan otomatis. Setelah selesai, menu utama script akan tampil dan siap digunakan.
 
 ### Hubungi Kami
 
@@ -52,6 +66,8 @@ chmod +x setup.sh && ./setup.sh
 </div>
 
 ### Kompatibilitas Sistem Operasi
+
+Script telah diuji dan berjalan stabil pada sistem operasi berikut:
 
 | Sistem Operasi | Versi | Dropbear | Haproxy |
 |:---|:---:|:---:|:---:|
@@ -69,32 +85,34 @@ chmod +x setup.sh && ./setup.sh
 <tr>
 <td valign="top">
 
-- Instalasi dinamis
-- Auto-reboot (95%)
-- Auto-fix Xray
-- Backup &amp; restore
+- Instalasi dinamis, menyesuaikan spesifikasi VPS
+- Auto-reboot terjadwal (tingkat keberhasilan 95%)
+- Auto-fix Xray jika terjadi error
+- Backup &amp; restore konfigurasi
 
 </td>
 <td valign="top">
 
-- Manajemen user
-- Hapus otomatis expired
-- Lock &amp; unlock akun
-- Limit IP &amp; kuota
+- Manajemen akun pengguna dari menu
+- Penghapusan otomatis akun expired
+- Lock &amp; unlock akun tertentu
+- Pembatasan IP &amp; kuota per akun
 
 </td>
 <td valign="top">
 
-- Monitoring bandwidth
-- Proteksi Fail2Ban
-- Akses bot Telegram
-- Notifikasi bot Telegram
+- Monitoring penggunaan bandwidth
+- Proteksi brute-force dengan Fail2Ban
+- Kontrol server via bot Telegram
+- Notifikasi aktivitas server ke Telegram
 
 </td>
 </tr>
 </table>
 
 ### Informasi Multiport
+
+Berikut daftar protokol dan port yang aktif secara default setelah instalasi:
 
 | Layanan | Protokol | Port |
 |:---|:---:|:---:|
@@ -112,6 +130,8 @@ chmod +x setup.sh && ./setup.sh
 | Trojan | gRPC | 443 |
 
 ### Pengaturan Cloudflare
+
+Jika domain diarahkan melalui Cloudflare, gunakan pengaturan berikut agar seluruh protokol berjalan normal:
 
 | Pengaturan | Status |
 |:---|:---:|
@@ -132,12 +152,14 @@ chmod +x setup.sh && ./setup.sh
 
 ### Mekanisme Penyewaan
 
-Autoscript update terakhir `Version 2.4`. Semua fitur pada menu utama sudah dioptimalkan untuk meminimalisir adanya bug.
+Versi terbaru script ini adalah `Version 2.4`. Seluruh fitur pada menu utama telah dioptimalkan agar minim bug dan stabil digunakan jangka panjang.
+
+Langkah untuk menyewa/mengaktifkan script pada VPS Anda:
 
 1. Hubungi admin melalui WhatsApp atau Telegram di atas
-2. Kirimkan IP VPS Anda
-3. Lakukan proses pembayaran
-4. IP akan diinputkan oleh Admin Gemilang Kinasih
+2. Kirimkan alamat IP VPS Anda
+3. Lakukan pembayaran sesuai paket yang dipilih
+4. Admin akan mengaktifkan IP Anda dan script siap digunakan
 
 <div align="right"><a href="#readme-top"><sub>Kembali ke atas</sub></a></div>
 
@@ -151,7 +173,13 @@ Autoscript update terakhir `Version 2.4`. Semua fitur pada menu utama sudah diop
 
 <sub>This is the English translation of the README above. Select the <b>Indonesia</b> badge at the top to switch back.</sub>
 
+### About This Script
+
+Gemilang Kinasih Autoscript is an automated installer for building a VPN and tunneling server (SSH, OpenVPN, VMESS, VLESS, Trojan) in a single run. It's built for resellers and VPS administrators who want a ready-to-use server without manually configuring each service.
+
 ### Installation
+
+Copy and run the following command on your VPS terminal (root access required):
 
 ```bash
 apt update -y && apt upgrade -y && \
@@ -159,6 +187,8 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && \
 wget https://raw.githubusercontent.com/gemilangkinasih/autoscript/main/setup.sh && \
 chmod +x setup.sh && ./setup.sh
 ```
+
+The installation runs automatically. Once finished, the main menu will appear and the script is ready to use.
 
 ### Contact Us
 
@@ -174,6 +204,8 @@ chmod +x setup.sh && ./setup.sh
 </div>
 
 ### OS Compatibility
+
+The script has been tested and runs stably on the following operating systems:
 
 | OS | Versions | Dropbear | Haproxy |
 |:---|:---:|:---:|:---:|
@@ -191,32 +223,34 @@ chmod +x setup.sh && ./setup.sh
 <tr>
 <td valign="top">
 
-- Dynamic installation
-- Auto-reboot (95%)
-- Auto-fix Xray
-- Backup &amp; restore
+- Dynamic installation, adapts to VPS specs
+- Scheduled auto-reboot (95% success rate)
+- Auto-fix Xray on error
+- Configuration backup &amp; restore
 
 </td>
 <td valign="top">
 
-- User management
-- Auto-delete expired
-- Lock &amp; unlock
-- Limit IP &amp; quota
+- Manage user accounts from the menu
+- Automatic removal of expired accounts
+- Lock &amp; unlock specific accounts
+- IP &amp; quota limits per account
 
 </td>
 <td valign="top">
 
-- Bandwidth monitoring
-- Fail2Ban protection
-- Telegram bot access
-- Telegram bot notifications
+- Bandwidth usage monitoring
+- Brute-force protection via Fail2Ban
+- Server control through a Telegram bot
+- Server activity notifications on Telegram
 
 </td>
 </tr>
 </table>
 
 ### Multiport Info
+
+Below are the protocols and ports enabled by default after installation:
 
 | Service | Protocol | Port |
 |:---|:---:|:---:|
@@ -234,6 +268,8 @@ chmod +x setup.sh && ./setup.sh
 | Trojan | gRPC | 443 |
 
 ### Cloudflare Settings
+
+If your domain is proxied through Cloudflare, use the following settings so every protocol works correctly:
 
 | Setting | Status |
 |:---|:---:|
@@ -254,18 +290,18 @@ chmod +x setup.sh && ./setup.sh
 
 ### Rental Mechanism
 
-The latest autoscript update is `Version 2.4`. All features in the main menu have been optimized to minimize bugs.
+The current release is `Version 2.4`. All features in the main menu have been optimized for stability and minimal bugs over long-term use.
+
+Steps to rent/activate the script on your VPS:
 
 1. Contact the admin via WhatsApp or Telegram above
-2. Send your VPS IP
-3. Complete the payment process
-4. Your IP will be added by Admin Gemilang Kinasih
+2. Send your VPS IP address
+3. Complete payment for your chosen package
+4. The admin will activate your IP and the script will be ready to use
 
 <div align="right"><a href="#readme-top"><sub>Back to top</sub></a></div>
 
 <br>
-
----
 
 <div align="center">
 
@@ -280,8 +316,6 @@ The latest autoscript update is `Version 2.4`. All features in the main menu hav
   <img src="https://img.shields.io/badge/Telegram-000000?style=flat-square&logo=telegram&logoColor=26A5E4" alt="Telegram">
 </a>
 
-<br><br>
-
-<sub>© 2026 Gemilang Kinasih Autoscript. All rights reserved.</sub>
-
 </div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:2563EB,100:1E3A8A&amp;height=150&amp;section=footer&amp;animation=fadeIn" width="100%" alt="Footer banner">
