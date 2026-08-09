@@ -63,7 +63,7 @@ Proses instalasi berjalan otomatis. Setelah selesai, menu utama script akan tamp
 
 Script telah diuji dan berjalan stabil pada sistem operasi berikut:
 
-| Sistem Operasi | Versi OS | Dropbear | Haproxy |
+| Sistem Operasi | Versi | Dropbear | Haproxy |
 |:---|:---:|:---:|:---:|
 | Ubuntu | 20, 22, 24 | Ya | Ya |
 | Debian | 10, 11, 12 | Ya | Ya |
@@ -148,8 +148,6 @@ Langkah untuk menyewa/mengaktifkan script pada VPS Anda:
 <div align="center">
 
 <sub><b>CONTACT &amp; SUPPORT</b></sub>
-
-<br><br>
 
 <a href="https://wa.me/+6285196156105">
   <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&amp;logo=whatsapp&amp;logoColor=white" alt="WhatsApp">
