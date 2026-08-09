@@ -35,7 +35,6 @@ debconf-set-selections <<<"cryptsetup cryptsetup/compat boolean true"
 debconf-set-selections <<<"msmtp msmtp/apparmor boolean false"
 
 apt install curl
-apt install at
 IP=$( curl -sS ipv4.icanhazip.com )
 
 YELLOW='\033[0;33m'
@@ -43,7 +42,6 @@ GREEN='\033[0;32m'
 BG_HEADER='\033[40;1;37m'
 NC='\033[0m'
 
-clear
 echo -e "${YELLOW}──────────────────────────────────────────${NC}"
 echo -e "${BG_HEADER}      INFORMATION AUTOSCRIPT PREMIUM      ${NC}"
 echo -e "${YELLOW}──────────────────────────────────────────${NC}"
@@ -112,7 +110,7 @@ clear
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e "$1"
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
-sleep 3
+sleep 2
 }
 
 function print_error() {
@@ -126,7 +124,7 @@ clear
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e "$1 Success"
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
-sleep 3
+sleep 2
 fi
 }
 
@@ -163,55 +161,20 @@ print_success "Create Direktori Xray"
 function nginx_install() {
 if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
     print_install "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
+
     sudo apt-get install nginx -y 
 elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
     print_success "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"  
     apt -y install nginx 
 else
     echo -e "Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${FONT} )"
+
 fi
 }
 
 function haproxy_install() {
 clear
-OS_ID=$(grep -w ID /etc/os-release | cut -d= -f2 | tr -d '"')
-OS_NAME=$(grep -w PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')
-if [[ $OS_ID == "ubuntu" ]]; then
-    print_install "Setup Haproxy For $OS_NAME"
-    sudo apt update
-    sudo apt install haproxy -y
-    rm -rf /usr/sbin/haproxy
-    wget -q /usr/sbin/haproxy "${REPO}files/haproxy"
-    chmod +x /usr/sbin/haproxy
-    sudo rm -rf /usr/lib/x86_64-linux-gnu/liblua5.3.so.0
-    wget http://archive.ubuntu.com/ubuntu/pool/main/l/lua5.3/liblua5.3-0_5.3.3-1.1ubuntu2_amd64.deb
-    sudo dpkg -i liblua5.3-0_5.3.3-1.1ubuntu2_amd64.deb
-    rm -rf liblua5.3-0_5.3.3-1.1ubuntu2_amd64.deb
-    wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-    sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-    rm -rf libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-    sudo ldconfig
-    clear
-    print_success "Setup Haproxy For $OS_NAME"
-elif [[ $OS_ID == "debian" ]]; then
-    print_install "Setup Haproxy For $OS_NAME"
-    curl https://haproxy.debian.net/bernat.debian.org.gpg | gpg --dearmor >/usr/share/keyrings/haproxy.debian.net.gpg
-    echo deb "[signed-by=/usr/share/keyrings/haproxy.debian.net.gpg]" http://haproxy.debian.net buster-backports-1.8 main > /etc/apt/sources.list.d/haproxy.list
-    sudo apt-get update
-    if ! dpkg -s libssl1.1 >/dev/null 2>&1; then
-        echo "libssl1.1 tidak ditemukan, menambahkan repo Buster untuk menginstalnya..."
-        echo "deb http://snapshot.debian.org/archive/debian/20210731T150000Z buster main" | sudo tee /etc/apt/sources.list.d/buster.list
-        sudo apt update
-        sudo apt install -y libssl1.1 --allow-downgrades
-    else
-        echo "libssl1.1 sudah terinstal."
-    fi
-    apt-get -y install haproxy=1.8.*
-    print_success "Setup Haproxy For $OS_NAME"
-else
-    echo -e "Your OS is not supported ($OS_NAME)"
-    exit 1
-fi
+apt install haproxy -y
 }
 
 function base_package() {
@@ -241,7 +204,6 @@ print_success "Install Required Packages"
 function pasang_domain() {
     clear
     print_install "Install Subdomain Server"
-    clear
     echo -e "▒█▀▀▀█ ▒█░▒█ ▒█▀▀█ ▒█▀▀▄ ▒█▀▀▀█ ▒█▀▄▀█ ░█▀▀█ ▀█▀ ▒█▄░▒█\033[0m" 
     echo -e "░▀▀▀▄▄ ▒█░▒█ ▒█▀▀▄ ▒█░▒█ ▒█░░▒█ ▒█▒█▒█ ▒█▄▄█ ▒█░ ▒█▒█▒█\033[0m" 
     echo -e "▒█▄▄▄█ ░▀▄▄▀ ▒█▄▄█ ▒█▄▄▀ ▒█▄▄▄█ ▒█░░▒█ ▒█░▒█ ▄█▄ ▒█░░▀█\033[0m" 
@@ -317,11 +279,12 @@ datediff() {
 mai="datediff "$Exp" "$DATE""
 CITY=$(curl -s ipinfo.io/city )
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+
 Info="(${green}Online${NC})"
 Error="(${RED}Expired${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-
 Exp1=$(curl $izinsc | grep $MYIP | awk '{print $4}')
+
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -439,6 +402,7 @@ domain=$(cat /etc/xray/domain)
 curl -s ipinfo.io/city > /etc/xray/city
 curl -s ipinfo.io/org | cut -d " " -f 2-10 > /etc/xray/isp
 wget -O /etc/haproxy/haproxy.cfg "${REPO}config/haproxy.cfg" > /dev/null 2>&1
+sed -i -e '$a\' /etc/haproxy/haproxy.cfg >/dev/null 2>&1
 wget -O /etc/nginx/conf.d/xray.conf "${REPO}config/xray.conf" > /dev/null 2>&1
 sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
 sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
@@ -535,7 +499,6 @@ print_install "Install Service Limit IP & Quota"
 wget -q -O /root/fv-tunnel ${REPO}config/fv-tunnel
 chmod +x /root/fv-tunnel
 bash /root/fv-tunnel
-
 mkdir -p /usr/local/kyt/
 wget -q -O /usr/local/kyt/udp-mini "${REPO}files/udp-mini"
 chmod +x /usr/local/kyt/udp-mini
@@ -626,6 +589,7 @@ rm -rf wondershaper
 rm -rf /usr/local/sbin/wondershaper
 echo > /home/limit
 apt install msmtp-mta ca-certificates bsd-mailx -y
+
 cat > /etc/msmtprc << EOF
 defaults
 tls on
@@ -640,6 +604,7 @@ from teohazzam@gmail.com
 password ikoo rxjw dnzc mhxg
 logfile ~/.msmtp.log
 EOF
+
 chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}files/ipserver"
 chmdo +x /etc/ipserver
@@ -647,7 +612,6 @@ bash /etc/ipserver
 print_success "Install Backup Server" 
 }
 
-clear
 function ins_swab(){
 clear
 print_install "Install Swap 2 G"
@@ -887,7 +851,7 @@ systemctl restart haproxy
 print_success "Enable Service" 
 }
 
-function instal(){
+function install(){
 clear
 first_setup
 nginx_install
@@ -915,7 +879,7 @@ enable_services
 restart_system
 }
 
-instal
+install
 rm -rf /root/menu
 rm -rf /root/*.zip
 rm -rf /root/*.sh
@@ -923,7 +887,6 @@ rm /root/domain
 rm /root/scdomain
 rm /root/nsdomain
 clear
-
 echo "" | tee -a /root/install.log
 echo "████████╗░█████╗░██╗░░██╗░█████╗░██╗░░░██╗██████╗░███╗░░██╗"| tee -a /root/install.log
 echo "╚══██╔══╝██╔══██╗██║░██╔╝██╔══██╗██║░░░██║██╔══██╗████╗░██║"| tee -a /root/install.log
