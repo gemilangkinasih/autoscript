@@ -1,12 +1,12 @@
 ## INSTALL SCRIPT 
-Install Autoscript Premium by Gemilang Kinasih
+Autoscript By Gemilang Kinasih
 ```
-apt update -y && apt upgrade -y && apt install -y && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && wget https://gmvpn.my.id/autoscript && chmod +x autoscript && ./autoscript
+apt update -y && apt upgrade -y && apt install -y && sysctl -w net.ipv6.conf.all.disable_ipv6=1 && wget https://raw.githubusercontent.com/gemilangkinasih/autoscript/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 ## `BUY PREMIUM!`
 Toko VPN :
 
-<a href="https://wa.me/+628984880039" target="_blank">
+<a href="https://wa.me/+6285196156105" target="_blank">
   <img src="https://img.shields.io/badge/WhatsApp-Click%20Here-success?style=flat&logo=whatsapp">
 </a>
 <a href="https://t.me/gemilangkinasih" target="_blank">
