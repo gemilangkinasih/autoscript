@@ -13,27 +13,25 @@
 <img src="https://img.shields.io/badge/version-2.4-3b82f6?style=flat-square" alt="Version">
 <img src="https://img.shields.io/badge/status-maintained-16a34a?style=flat-square" alt="Maintained">
 <img src="https://img.shields.io/badge/license-private-e11d48?style=flat-square" alt="License">
-
-<br><br>
-
-<a href="#indonesia">
-  <img src="https://img.shields.io/badge/Bahasa-Indonesia-DC2626?style=for-the-badge&logo=googletranslate&logoColor=white" alt="Bahasa Indonesia">
-</a>
-<a href="#english">
-  <img src="https://img.shields.io/badge/Language-English-2563EB?style=for-the-badge&logo=googletranslate&logoColor=white" alt="English">
-</a>
+<img src="https://img.shields.io/badge/Bahasa-Indonesia-DC2626?style=flat-square&amp;logo=googletranslate&amp;logoColor=white" alt="Bahasa Indonesia">
+<img src="https://img.shields.io/badge/Language-English-2563EB?style=flat-square&amp;logo=googletranslate&amp;logoColor=white" alt="English">
 
 </div>
 
 <br>
 
+<sub align="center">
+
+Klik judul bahasa di bawah untuk membuka/menutup bagiannya &middot; Click a language heading below to expand/collapse its section
+
+</sub>
+
 ---
 
-<a id="indonesia"></a>
+<details open>
+<summary><h2 style="display:inline">Bahasa Indonesia</h2></summary>
 
-## Bahasa Indonesia
-
-<sub>Bahasa default README ini. Pilih badge <b>English</b> di atas untuk beralih bahasa.</sub>
+<br>
 
 ### Tentang Script
 
@@ -57,10 +55,10 @@ Proses instalasi berjalan otomatis. Setelah selesai, menu utama script akan tamp
 <div align="center">
 
 <a href="https://wa.me/+6285196156105">
-  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&amp;logo=whatsapp&amp;logoColor=white" alt="WhatsApp">
 </a>
 <a href="https://t.me/gemilangkinasih">
-  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&amp;logo=telegram&amp;logoColor=white" alt="Telegram">
 </a>
 
 </div>
@@ -80,15 +78,15 @@ Script telah diuji dan berjalan stabil pada sistem operasi berikut:
 - Instalasi dinamis, menyesuaikan spesifikasi VPS
 - Auto-reboot terjadwal (tingkat keberhasilan 95%)
 - Auto-fix Xray jika terjadi error
-- Backup &amp; restore konfigurasi
+- Backup & restore konfigurasi
 
 **Kontrol Pengguna**
 - Manajemen akun pengguna dari menu
 - Penghapusan otomatis akun expired
-- Lock &amp; unlock akun tertentu
-- Pembatasan IP &amp; kuota per akun
+- Lock & unlock akun tertentu
+- Pembatasan IP & kuota per akun
 
-**Jaringan &amp; Keamanan**
+**Jaringan & Keamanan**
 - Monitoring penggunaan bandwidth
 - Proteksi brute-force dengan Fail2Ban
 - Kontrol server via bot Telegram
@@ -147,15 +145,14 @@ Langkah untuk menyewa/mengaktifkan script pada VPS Anda:
 
 <div align="right"><a href="#readme-top"><sub>Kembali ke atas</sub></a></div>
 
+</details>
+
 <br>
 
----
+<details>
+<summary><h2 style="display:inline">English</h2></summary>
 
-<a id="english"></a>
-
-## English
-
-<sub>This is the English translation of the README above. Select the <b>Indonesia</b> badge at the top to switch back.</sub>
+<br>
 
 ### About This Script
 
@@ -179,10 +176,10 @@ The installation runs automatically. Once finished, the main menu will appear an
 <div align="center">
 
 <a href="https://wa.me/+6285196156105">
-  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&amp;logo=whatsapp&amp;logoColor=white" alt="WhatsApp">
 </a>
 <a href="https://t.me/gemilangkinasih">
-  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&amp;logo=telegram&amp;logoColor=white" alt="Telegram">
 </a>
 
 </div>
@@ -202,15 +199,15 @@ The script has been tested and runs stably on the following operating systems:
 - Dynamic installation, adapts to VPS specs
 - Scheduled auto-reboot (95% success rate)
 - Auto-fix Xray on error
-- Configuration backup &amp; restore
+- Configuration backup & restore
 
 **User Control**
 - Manage user accounts from the menu
 - Automatic removal of expired accounts
-- Lock &amp; unlock specific accounts
-- IP &amp; quota limits per account
+- Lock & unlock specific accounts
+- IP & quota limits per account
 
-**Network &amp; Security**
+**Network & Security**
 - Bandwidth usage monitoring
 - Brute-force protection via Fail2Ban
 - Server control through a Telegram bot
@@ -269,7 +266,11 @@ Steps to rent/activate the script on your VPS:
 
 <div align="right"><a href="#readme-top"><sub>Back to top</sub></a></div>
 
+</details>
+
 <br>
+
+---
 
 <div align="center">
 
@@ -278,10 +279,10 @@ Steps to rent/activate the script on your VPS:
 <br><br>
 
 <a href="https://wa.me/+6285196156105">
-  <img src="https://img.shields.io/badge/WhatsApp-000000?style=flat-square&logo=whatsapp&logoColor=25D366" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/WhatsApp-000000?style=flat-square&amp;logo=whatsapp&amp;logoColor=25D366" alt="WhatsApp">
 </a>
 <a href="https://t.me/gemilangkinasih">
-  <img src="https://img.shields.io/badge/Telegram-000000?style=flat-square&logo=telegram&logoColor=26A5E4" alt="Telegram">
+  <img src="https://img.shields.io/badge/Telegram-000000?style=flat-square&amp;logo=telegram&amp;logoColor=26A5E4" alt="Telegram">
 </a>
 
 </div>
