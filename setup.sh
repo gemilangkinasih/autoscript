@@ -23,6 +23,17 @@ NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
 
+export DEBIAN_FRONTEND=noninteractive
+debconf-set-selections <<<"keyboard-configuration keyboard-configuration/layout select English"
+debconf-set-selections <<<"keyboard-configuration keyboard-configuration/variant select English"
+debconf-set-selections <<<"keyboard-configuration keyboard-configuration/optionscode string"
+debconf-set-selections <<<"console-setup console-setup/charmap47 select UTF-8"
+debconf-set-selections <<<"console-setup console-setup/codeset47 select Guess optimal character set"
+debconf-set-selections <<<"dropbear dropbear/enable_syslog boolean true"
+debconf-set-selections <<<"cryptsetup cryptsetup/confirm boolean true"
+debconf-set-selections <<<"cryptsetup cryptsetup/compat boolean true"
+debconf-set-selections <<<"msmtp msmtp/apparmor boolean false"
+
 apt install curl
 apt install at
 IP=$( curl -sS ipv4.icanhazip.com )
