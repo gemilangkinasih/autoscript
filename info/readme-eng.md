@@ -8,7 +8,7 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=16&amp;pause=1200&amp;color=2563EB&amp;center=true&amp;vCenter=true&amp;width=440&amp;lines=Automated+VPN+and+Tunneling+Setup;Fast+%C2%B7+Stable+%C2%B7+Secure" width="100%" style="max-width:440px" alt="Typing animation">
 
-<br><br>
+<br>
 
 <img src="https://img.shields.io/badge/version-2.4-3b82f6?style=flat-square" alt="Version">
 <img src="https://img.shields.io/badge/status-maintained-16a34a?style=flat-square" alt="Maintained">
