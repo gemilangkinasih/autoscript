@@ -268,10 +268,6 @@ Steps to rent/activate the script on your VPS:
 
 <div align="center">
 
-<sub><b>CONTACT &amp; SUPPORT</b></sub>
-
-<br><br>
-
 <a href="https://wa.me/+6285196156105">
   <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&amp;logo=whatsapp&amp;logoColor=white" alt="WhatsApp">
 </a>
