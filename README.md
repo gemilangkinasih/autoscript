@@ -20,12 +20,6 @@
 
 <br>
 
-<sub align="center">
-
-Klik judul bahasa di bawah untuk membuka/menutup bagiannya &middot; Click a language heading below to expand/collapse its section
-
-</sub>
-
 ---
 
 <details open>
@@ -279,10 +273,10 @@ Steps to rent/activate the script on your VPS:
 <br><br>
 
 <a href="https://wa.me/+6285196156105">
-  <img src="https://img.shields.io/badge/WhatsApp-000000?style=flat-square&amp;logo=whatsapp&amp;logoColor=25D366" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&amp;logo=whatsapp&amp;logoColor=white" alt="WhatsApp">
 </a>
 <a href="https://t.me/gemilangkinasih">
-  <img src="https://img.shields.io/badge/Telegram-000000?style=flat-square&amp;logo=telegram&amp;logoColor=26A5E4" alt="Telegram">
+  <img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&amp;logo=telegram&amp;logoColor=white" alt="Telegram">
 </a>
 
 </div>
