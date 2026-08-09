@@ -2,11 +2,11 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:1E3A8A,100:2563EB&amp;height=220&amp;section=header&amp;text=GEMILANG%20KINASIH&amp;fontSize=42&amp;fontColor=ffffff&amp;fontAlignY=38&amp;animation=fadeIn&amp;desc=Premium%20VPN%20and%20Tunneling%20Auto%20Installer&amp;descAlignY=58&amp;descSize=18" width="100%" alt="Header banner">
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:1E3A8A,100:2563EB&amp;height=180&amp;section=header&amp;text=GEMILANG%20KINASIH&amp;fontSize=32&amp;fontColor=ffffff&amp;fontAlignY=36&amp;animation=fadeIn&amp;desc=Premium%20VPN%20and%20Tunneling%20Auto%20Installer&amp;descAlignY=58&amp;descSize=14" width="100%" alt="Header banner">
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=20&amp;pause=1200&amp;color=2563EB&amp;center=true&amp;vCenter=true&amp;width=600&amp;lines=Instalasi+VPN+%26+Tunneling+Otomatis;Cepat+%C2%B7+Stabil+%C2%B7+Aman;Fast+%C2%B7+Stable+%C2%B7+Secure" alt="Typing animation">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;weight=500&amp;size=16&amp;pause=1200&amp;color=2563EB&amp;center=true&amp;vCenter=true&amp;width=440&amp;lines=Instalasi+VPN+dan+Tunneling+Otomatis;Cepat+%C2%B7+Stabil+%C2%B7+Aman;Fast+and+Stable+and+Secure" width="100%" style="max-width:440px" alt="Typing animation">
 
 <br><br>
 
@@ -76,39 +76,23 @@ Script telah diuji dan berjalan stabil pada sistem operasi berikut:
 
 ### Fitur Script Premium
 
-<table width="100%">
-<tr>
-<th align="left" width="33%">Manajemen Sistem</th>
-<th align="left" width="33%">Kontrol Pengguna</th>
-<th align="left" width="33%">Jaringan &amp; Keamanan</th>
-</tr>
-<tr>
-<td valign="top">
-
+**Manajemen Sistem**
 - Instalasi dinamis, menyesuaikan spesifikasi VPS
 - Auto-reboot terjadwal (tingkat keberhasilan 95%)
 - Auto-fix Xray jika terjadi error
 - Backup &amp; restore konfigurasi
 
-</td>
-<td valign="top">
-
+**Kontrol Pengguna**
 - Manajemen akun pengguna dari menu
 - Penghapusan otomatis akun expired
 - Lock &amp; unlock akun tertentu
 - Pembatasan IP &amp; kuota per akun
 
-</td>
-<td valign="top">
-
+**Jaringan &amp; Keamanan**
 - Monitoring penggunaan bandwidth
 - Proteksi brute-force dengan Fail2Ban
 - Kontrol server via bot Telegram
 - Notifikasi aktivitas server ke Telegram
-
-</td>
-</tr>
-</table>
 
 ### Informasi Multiport
 
@@ -214,39 +198,23 @@ The script has been tested and runs stably on the following operating systems:
 
 ### Premium Script Features
 
-<table width="100%">
-<tr>
-<th align="left" width="33%">System Management</th>
-<th align="left" width="33%">User Control</th>
-<th align="left" width="33%">Network &amp; Security</th>
-</tr>
-<tr>
-<td valign="top">
-
+**System Management**
 - Dynamic installation, adapts to VPS specs
 - Scheduled auto-reboot (95% success rate)
 - Auto-fix Xray on error
 - Configuration backup &amp; restore
 
-</td>
-<td valign="top">
-
+**User Control**
 - Manage user accounts from the menu
 - Automatic removal of expired accounts
 - Lock &amp; unlock specific accounts
 - IP &amp; quota limits per account
 
-</td>
-<td valign="top">
-
+**Network &amp; Security**
 - Bandwidth usage monitoring
 - Brute-force protection via Fail2Ban
 - Server control through a Telegram bot
 - Server activity notifications on Telegram
-
-</td>
-</tr>
-</table>
 
 ### Multiport Info
 
