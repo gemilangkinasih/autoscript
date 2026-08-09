@@ -14,7 +14,7 @@
 <img src="https://img.shields.io/badge/status-maintained-16a34a?style=flat-square" alt="Maintained">
 <img src="https://img.shields.io/badge/license-private-e11d48?style=flat-square" alt="License">
 
-<br><br>
+<br>
 
 <a href="README.md">
   <img src="https://img.shields.io/badge/Bahasa-Indonesia-DC2626?style=flat-square&amp;logo=googletranslate&amp;logoColor=white" alt="Bahasa Indonesia">
@@ -63,10 +63,10 @@ Proses instalasi berjalan otomatis. Setelah selesai, menu utama script akan tamp
 
 Script telah diuji dan berjalan stabil pada sistem operasi berikut:
 
-| Sistem Operasi | Versi | Dropbear | Haproxy |
+| Sistem Operasi | Versi OS | Dropbear | Haproxy |
 |:---|:---:|:---:|:---:|
-| Ubuntu | 20 / 22 / 24 | Ya | Ya |
-| Debian | 10 / 11 / 12 | Ya | Ya |
+| Ubuntu | 20, 22, 24 | Ya | Ya |
+| Debian | 10, 11, 12 | Ya | Ya |
 
 ### Fitur Script Premium
 
