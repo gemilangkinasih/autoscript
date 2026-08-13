@@ -11,7 +11,7 @@
 <br>
 
 <img src="https://img.shields.io/badge/version-2.4-3b82f6?style=flat-square" alt="Version">
-<img src="https://img.shields.io/badge/status-maintained-16a34a?style=flat-square" alt="Maintained">
+<img src="https://img.shields.io/badge/status-activated-16a34a?style=flat-square" alt="Activated">
 <img src="https://img.shields.io/badge/license-private-e11d48?style=flat-square" alt="License">
 
 <br>
