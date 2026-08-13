@@ -123,9 +123,9 @@ Jika domain diarahkan melalui Cloudflare, gunakan pengaturan berikut agar seluru
 ### Tampilan Menu Script
 
 <div align="center">
-<img width="100%" alt="Tampilan menu autoscript" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/autoscript.jpg">
+<img width="100%" alt="Tampilan menu autoscript" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/image-1.jpg">
 <br><br>
-<img width="100%" alt="Tampilan SSH premium" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/sshpremium.jpg">
+<img width="100%" alt="Tampilan SSH premium" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/image-2.jpg">
 </div>
 
 ### Mekanisme Penyewaan
