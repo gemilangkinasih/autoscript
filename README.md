@@ -124,7 +124,7 @@ Jika domain diarahkan melalui Cloudflare, gunakan pengaturan berikut agar seluru
 
 <div align="center">
 <img width="100%" alt="Tampilan menu autoscript" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/image-1.jpg">
-<br><br>
+<br>
 <img width="100%" alt="Tampilan SSH premium" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/image-2.jpg">
 </div>
 
