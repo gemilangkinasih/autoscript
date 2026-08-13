@@ -11,7 +11,7 @@
 <br>
 
 <img src="https://img.shields.io/badge/version-2.4-3b82f6?style=flat-square" alt="Version">
-<img src="https://img.shields.io/badge/status-maintained-16a34a?style=flat-square" alt="Maintained">
+<img src="https://img.shields.io/badge/status-activated-16a34a?style=flat-square" alt="activated">
 <img src="https://img.shields.io/badge/license-private-e11d48?style=flat-square" alt="License">
 
 <br>
@@ -123,9 +123,9 @@ If your domain is proxied through Cloudflare, use the following settings so ever
 ### Script Menu Preview
 
 <div align="center">
-<img width="100%" alt="Autoscript menu preview" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/autoscript.jpg">
-<br><br>
-<img width="100%" alt="SSH premium preview" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/sshpremium.jpg">
+<img width="100%" alt="Autoscript menu preview" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/image-1.jpg">
+<br>
+<img width="100%" alt="SSH premium preview" src="https://github.com/gemilangkinasih/autoscript/raw/main/images/image-2.jpg">
 </div>
 
 ### Rental Mechanism
