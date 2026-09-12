@@ -34,7 +34,7 @@ systemctl enable --now limittrojan
 cat > /etc/systemd/system/vmip.service << EOF
 [Unit]
 Description=Set Up - By Gemilang Kinasih
-ProjectAfter=network.target
+After=network.target
 
 [Service]
 WorkingDirectory=/root
@@ -49,7 +49,7 @@ EOF
 cat > /etc/systemd/system/vlip.service << EOF
 [Unit]
 Description=Set Up - By Gemilang Kinasih
-ProjectAfter=network.target
+After=network.target
 
 [Service]
 WorkingDirectory=/root
@@ -64,7 +64,7 @@ EOF
 cat > /etc/systemd/system/vtrip.service << EOF
 [Unit]
 Description=Set Up - By Gemilang Kinasih
-ProjectAfter=network.target
+After=network.target
 
 [Service]
 WorkingDirectory=/root
@@ -79,7 +79,7 @@ EOF
 cat > /etc/systemd/system/vsip.service << EOF
 [Unit]
 Description=Set Up - By Gemilang Kinasih
-ProjectAfter=network.target
+After=network.target
 
 [Service]
 WorkingDirectory=/root
@@ -94,7 +94,7 @@ EOF
 cat > /etc/systemd/system/keamanan.service << EOF
 [Unit]
 Description=Set Up - By Gemilang Kinasih
-ProjectAfter=network.target
+After=network.target
 
 [Service]
 WorkingDirectory=/root
