@@ -78,7 +78,7 @@ gem install lolcat
 apt install wondershaper -y
 
 # LINK REPO
-REPO="https://raw.githubusercontent.com/gemilangkinasih/autoscript/"
+REPO="https://raw.githubusercontent.com/gemilangkinasih/autoscript/main/"
 start=$(date +%s)
 
 secs_to_human() {
