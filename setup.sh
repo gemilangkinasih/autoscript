@@ -8,31 +8,30 @@
 
 rm -rf "$0" 2>/dev/null
 
-GREEN="\e[92;1m"
+GREEN="\033[92;1m"
+green="\033[0;32m"
 RED="\033[31m"
+red="\033[1;31m"
 YELLOW="\033[33m"
-BLUE="\033[36m"
+BLUE="\033[94m"
+GRAY="\033[1;30m"
 FONT="\033[0m"
-REDBG="\033[41;37m"
-ERROR="${RED}[ERROR]${FONT}"
-GRAY="\e[1;30m"
-NC='\e[0m'
-red='\e[1;31m'
-green='\e[0;32m'
+NC="\033[0m"
+ERROR="${red}[ERROR]${FONT}"
 
 apt install curl
 apt install at
 IP=$( curl -sS ipv4.icanhazip.com )
 clear
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
-echo -e "\E[40;1;37m      INFORMATION AUTOSCRIPT PREMIUM      \E[0m"
+echo -e "\033[40;1;37m            AUTOSCRIPT PREMIUM            \033[0m"
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
-echo -e "Developer   : Gemilang Kinasih (${GREEN}Latest Edition${NC})"
-echo -e "Copyright   : ${GREEN}Gemilang Kinasih $(date +%Y)${NC}"
-echo -e "Os Support  : Debian & Ubuntu OS All Versions"
+echo -e "Developer   : Gemilang Kinasih"
+echo -e "Edition     : ${GREEN}Latest${NC}"
+echo -e "Copyright   : Gemilang Kinasih $(date +%Y)"
+echo -e "OS Support  : Debian and Ubuntu"
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e ""
-sleep 3
 
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
     echo -e "Supports your OS ( ${green}$( uname -m )${NC} )"
@@ -57,8 +56,8 @@ else
 fi
 
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
-echo -e ""
-read -p "$( echo -e "Press ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} For Starting Installation")"
+echo -e "Installation starts in 3 seconds..."
+sleep 3
 
 if [ "${EUID}" -ne 0 ]; then
 		echo "Need root permission for script installation"
@@ -93,13 +92,13 @@ echo -e "$1"
 
 function print_error() {
 clear
-echo -e "${ERROR} ${REDBG} $1 ${FONT}"
+echo -e "${ERROR} ${red}$1${FONT}"
 }
 
 function print_success() {
 if [[ 0 -eq $? ]]; then
 clear
-echo -e "$1 Success"
+echo -e "${GREEN}$1 Success${FONT}"
 fi
 }
 
