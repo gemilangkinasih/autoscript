@@ -81,21 +81,19 @@ echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's 
 }
 
 function print_ok() {
-echo -e "${BLUE} $1 ${FONT}"
-}
-
-function print_install() {
 echo -e "${BLUE}$1${FONT}"
 }
 
+function print_install() {
+echo -e "${GREEN}$1${FONT}"
+}
+
 function print_error() {
-clear
-echo -e "${ERROR} ${red}$1${FONT}"
+echo -e "${ERROR}${red}$1${FONT}"
 }
 
 function print_success() {
 if [[ 0 -eq $? ]]; then
-clear
 echo -e "${GREEN}$1 Success${FONT}"
 fi
 }
