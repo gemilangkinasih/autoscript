@@ -26,10 +26,9 @@ clear
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e "\033[40;1;37m            AUTOSCRIPT PREMIUM            \033[0m"
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
-echo -e "Developer   : Gemilang Kinasih"
-echo -e "Edition     : ${GREEN}Latest${NC}"
-echo -e "Copyright   : Gemilang Kinasih $(date +%Y)"
-echo -e "OS Support  : Debian and Ubuntu"
+echo -e "Developer : Gemilang Kinasih | ${GREEN}Latest Edition${NC}"
+echo -e "Copyright : (C) $(date +%Y)"
+echo -e "OS Support: Debian & Ubuntu"
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e ""
 
@@ -41,9 +40,9 @@ else
 fi
 
 if [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "ubuntu" ]]; then
-    echo -e "${OK}Supports your OS ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "Supports your OS ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 elif [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "debian" ]]; then
-    echo -e "${OK}Supports your OS ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "Supports your OS ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 else
     echo -e "${EROR}Does not Support your OS ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
     exit 1
@@ -52,7 +51,7 @@ fi
 if [[ $IP == "" ]]; then
     echo -e "${EROR}IP Address ( ${YELLOW}Not Detected${NC} )"
 else
-    echo -e "${OK}IP Address ( ${green}$IP${NC} )"
+    echo -e "IP Address ( ${green}$IP${NC} )"
 fi
 
 echo -e "\e[33m──────────────────────────────────────────\033[0m"
@@ -82,12 +81,11 @@ echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's 
 }
 
 function print_ok() {
-echo -e "${OK} ${BLUE} $1 ${FONT}"
+echo -e "${BLUE} $1 ${FONT}"
 }
 
 function print_install() {
-clear
-echo -e "$1"
+echo -e "${BLUE}$1${FONT}"
 }
 
 function print_error() {
@@ -133,18 +131,40 @@ echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-
 print_success "Create Direktori Xray"
 }
 
+function install_nginx_package() {
+    local policy_file="/usr/sbin/policy-rc.d"
+
+    if [[ -e "$policy_file" ]]; then
+        apt-get install -y nginx
+        return $?
+    fi
+
+    (
+        trap 'rm -f "$policy_file"' EXIT
+        cat > "$policy_file" <<'EOF' || exit 1
+#!/bin/sh
+case "$1" in
+    nginx|nginx.service) exit 101 ;;
+esac
+exit 0
+EOF
+        chmod 755 "$policy_file" || exit 1
+        apt-get install -y nginx
+    )
+}
+
 function nginx_install() {
-if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
-    print_install "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
+    local os_id
+    local os_name
+    os_id=$(grep -w ID /etc/os-release | cut -d'=' -f2 | tr -d '"')
+    os_name=$(grep -w PRETTY_NAME /etc/os-release | cut -d'=' -f2 | tr -d '"')
 
-    sudo apt-get install nginx -y 
-elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
-    print_success "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"  
-    apt -y install nginx 
-else
-    echo -e "Your OS Is Not Supported ( ${YELLOW}$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')${FONT} )"
-
-fi
+    if [[ "$os_id" == "ubuntu" || "$os_id" == "debian" ]]; then
+        print_install "Setup nginx For OS Is $os_name"
+        install_nginx_package
+    else
+        echo -e "Your OS ($os_name) is not supported."
+    fi
 }
 
 function haproxy_install() {
@@ -399,7 +419,9 @@ domain=$(cat /root/domain)
 STOPWEBSERVER=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
 rm -rf /root/.acme.sh
 mkdir /root/.acme.sh
-systemctl stop $STOPWEBSERVER
+if [[ -n "$STOPWEBSERVER" ]]; then
+    systemctl stop "$STOPWEBSERVER"
+fi
 systemctl stop nginx
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
