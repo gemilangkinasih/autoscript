@@ -8,12 +8,11 @@
 
 rm -rf "$0" 2>/dev/null
 
-Green="\e[92;1m"
+GREEN="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
 BLUE="\033[36m"
 FONT="\033[0m"
-GREENBG="\033[42;37m"
 REDBG="\033[41;37m"
 ERROR="${RED}[ERROR]${FONT}"
 GRAY="\e[1;30m"
@@ -71,13 +70,11 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		exit 1
 fi
 
-clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 apt install ruby -y
 gem install lolcat
 apt install wondershaper -y
 
-# LINK REPO
 REPO="https://raw.githubusercontent.com/gemilangkinasih/autoscript/main/"
 start=$(date +%s)
 
@@ -91,10 +88,7 @@ echo -e "${OK} ${BLUE} $1 ${FONT}"
 
 function print_install() {
 clear
-echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e "$1"
-echo -e "\e[33m──────────────────────────────────────────\033[0m"
-sleep 2
 }
 
 function print_error() {
@@ -105,10 +99,7 @@ echo -e "${ERROR} ${REDBG} $1 ${FONT}"
 function print_success() {
 if [[ 0 -eq $? ]]; then
 clear
-echo -e "\e[33m──────────────────────────────────────────\033[0m"
 echo -e "$1 Success"
-echo -e "\e[33m──────────────────────────────────────────\033[0m"
-sleep 2
 fi
 }
 
@@ -158,11 +149,10 @@ fi
 }
 
 function haproxy_install() {
-clear
 OS_ID=$(grep -w ID /etc/os-release | cut -d'=' -f2 | tr -d '"')
 OS_NAME=$(grep -w PRETTY_NAME /etc/os-release | cut -d'=' -f2 | tr -d '"')
-if [[ "$OS_ID" == "ubuntu" ]]; then
 
+if [[ "$OS_ID" == "ubuntu" ]]; then
 print_install "Setup Haproxy For $OS_NAME"
 sudo apt update
 sudo apt install haproxy -y
@@ -198,11 +188,9 @@ rm -rf "$LIBPCRE_DEB"
 fi
 
 sudo ldconfig
-
-clear
 print_success "Haproxy For OS $OS_NAME"
-elif [[ "$OS_ID" == "debian" ]]; then
 
+elif [[ "$OS_ID" == "debian" ]]; then
 print_install "Setup Haproxy For $OS_NAME"
 sudo apt update
 sudo apt install haproxy -y
@@ -238,8 +226,6 @@ rm -rf "$LIBPCRE_DEB"
 fi
 
 sudo ldconfig
-
-clear
 print_success "Haproxy For OS $OS_NAME"
 else
 echo -e "Your OS ($OS_NAME) is not supported."
@@ -248,7 +234,6 @@ fi
 }
 
 function settings_debconf() {
-clear
 print_install "Settings Debconf Configurations"
 export DEBIAN_FRONTEND=noninteractive
 debconf-set-selections <<<"keyboard-configuration keyboard-configuration/layout select English"
@@ -259,15 +244,12 @@ debconf-set-selections <<<"console-setup console-setup/codeset47 select Guess op
 debconf-set-selections <<<"dropbear dropbear/enable_syslog boolean true"
 debconf-set-selections <<<"cryptsetup cryptsetup/confirm boolean true"
 debconf-set-selections <<<"cryptsetup cryptsetup/compat boolean true"
-
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
-clear
 print_success "Debconf Configurations Settings Successfully"
 }
 
 function base_package() {
-clear
 print_install "Install Required Packages"
 apt update -y
 apt install sudo -y
@@ -282,7 +264,7 @@ echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install iptables iptables-persistent netfilter-persistent libxml-parser-perl squid screen curl jq bzip2 gzip coreutils zip unzip net-tools sed bc apt-transport-https build-essential dirmngr libxml-parser-perl lsof openvpn easy-rsa fail2ban tmux squid dropbear socat cron bash-completion ntpdate xz-utils apt-transport-https chrony pkg-config bison make git speedtest-cli p7zip-full zlib1g-dev python-is-python3 python3-pip build-essential nginx p7zip-full squid libcurl4-openssl-dev
 sudo apt-get autoclean -y >/dev/null 2>&1
-audo apt-get -y --purge removd unscd >/dev/null 2>&1
+sudo apt-get -y --purge remove unscd >/dev/null 2>&1
 sudo apt-get -y --purge remove samba* >/dev/null 2>&1
 sudo apt-get -y --purge remove bind9* >/dev/null 2>&1
 sudo apt-get -y remove sendmail* >/dev/null 2>&1
@@ -291,9 +273,7 @@ print_success "Install Required Packages"
 }
 
 function pasang_domain() {
-    clear
     print_install "Install Subdomain Server"
-    clear
     echo -e ""
     echo -e "▒█▀▀▄ ▒█▀▀▀█ ▒█▀▄▀█ ░█▀▀█ ▀█▀ ▒█▄░▒█ ░░ ▒█░▒█ ▒█▀▀█\033[0m" 
     echo -e "▒█░▒█ ▒█░░▒█ ▒█▒█▒█ ▒█▄▄█ ▒█░ ▒█▒█▒█ ▀▀ ▒█░▒█ ▒█▄▄█\033[0m" 
@@ -342,21 +322,17 @@ function pasang_domain() {
 }
 
 restart_system(){
-clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 izinsc="https://raw.githubusercontent.com/gemilangkinasih/autoscript/main/register"
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl $izinsc | grep $MYIP | awk '{print $3}')
-echo "$expx" >/usr/bin/e
+exp=$(curl $izinsc | grep $MYIP | awk '{print $3}')
+echo "$exp" >/usr/bin/e
 
-# DETAIL ORDER
 username=$(cat /usr/bin/user)
-oid=$(cat /usr/bin/ver)
 exp=$(cat /usr/bin/e)
 
-clear
 d1=$(date -d "$valid" +%s)
 d2=$(date -d "$today" +%s)
 certifacate=$(((d1 - d2) / 86400))
@@ -365,10 +341,9 @@ DATE=$(date +'%Y-%m-%d')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
+    echo -e "$NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
 }
 
-mai="datediff "$Exp" "$DATE""
 CITY=$(curl -s ipinfo.io/city )
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 
@@ -376,11 +351,13 @@ Info="(${green}Online${NC})"
 Error="(${RED}Expired${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
 Exp1=$(curl $izinsc | grep $MYIP | awk '{print $4}')
+
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
 sts="${Error}"
 fi
+
 TIMES="10"
 CHATID=""
 KEY=""
@@ -405,9 +382,7 @@ TEXT="
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 
-# PASANG SSL
 function pasang_ssl() {
-clear
 print_install "Install SSL Subdomain Server"
 rm -rf /etc/xray/xray.key
 rm -rf /etc/xray/xray.crt
@@ -475,7 +450,6 @@ echo "Database Log Create User Account" >> /etc/user-create/user.log
 }
 
 function install_xray() {
-clear
 print_install "Install Xray"
 domainSock_dir="/run/xray";! [ -d $domainSock_dir ] && mkdir  $domainSock_dir
 chown www-data:www-data $domainSock_dir
@@ -488,7 +462,7 @@ chmod +x /usr/local/bin/xray
 systemctl restart xray
 wget -O /etc/systemd/system/runn.service "${REPO}files/runn.service" >/dev/null 2>&1
 print_success "Install Xray"
-clear
+
 print_install "Install Package Configuration"
 domain=$(cat /etc/xray/domain)
 curl -s ipinfo.io/city > /etc/xray/city
@@ -527,7 +501,6 @@ print_success "Install Package Configuration"
 }
 
 function ssh(){
-clear
 print_install "Install Password SSH"
 wget -O /etc/pam.d/common-password "${REPO}files/password"
 chmod +x /etc/pam.d/common-password
@@ -588,14 +561,10 @@ print_success "Install Password SSH"
 }
 
 function udp_mini(){
-clear
 print_install "Install Service Limit IP & Quota"
 wget -q -O /root/fv-tunnel ${REPO}config/fv-tunnel
 chmod +x /root/fv-tunnel
 bash /root/fv-tunnel
-
-clear
-# INSTALL PORT UDP MINI 7100,7200,7300
 mkdir -p /usr/local/kyt/
 wget -q -O /usr/local/kyt/udp-mini "${REPO}files/udp-mini"
 chmod +x /usr/local/kyt/udp-mini
@@ -618,7 +587,6 @@ print_success "Install Service Limit IP & Quota"
 }
 
 function ins_SSHD(){
-clear
 print_install "Install SSHD"
 wget -q -O /etc/ssh/sshd_config "${REPO}files/sshd" >/dev/null 2>&1
 chmod 700 /etc/ssh/sshd_config
@@ -629,7 +597,6 @@ print_success "Install SSHD"
 }
 
 function ins_dropbear(){
-clear
 print_install "Install Dropbear"
 apt-get install dropbear -y
 wget -q -O /etc/default/dropbear "${REPO}config/dropbear.conf"
@@ -642,7 +609,6 @@ print_success "Install Dropbear"
 }
 
 function ins_vnstat(){
-clear
 print_install "Install Vnstat"
 apt -y install vnstat > /dev/null 2>&1
 /etc/init.d/vnstat restart
@@ -664,7 +630,6 @@ print_success "Install Vnstat"
 }
 
 function ins_openvpn(){
-clear
 print_install "Install OpenVPN"
 wget -q ${REPO}files/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
@@ -672,7 +637,6 @@ print_success "Install OpenVPN"
 }
 
 function ins_backup(){
-clear
 print_install "Install Backup Server"
 apt install rclone -y
 printf "q\n" | rclone config
@@ -707,9 +671,7 @@ bash /etc/ipserver
 print_success "Install Backup Server" 
 }
 
-clear
 function ins_swab(){
-clear
 print_install "Install Swap 2 G"
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 gotop_link="https://github.com/xxxserxxx/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
@@ -735,7 +697,6 @@ print_success "Install Swap 2 G"
 }
 
 function ins_epro(){
-clear
 print_install "Install ePro WebSocket Proxy"
 wget -O /usr/bin/ws "${REPO}files/ws" >/dev/null 2>&1
 wget -O /usr/bin/tun.conf "${REPO}config/tun.conf" >/dev/null 2>&1
@@ -764,16 +725,13 @@ print_success "Install ePro WebSocket Proxy"
 }
 
 ins_udp() {
-clear
 print_install "Install UDP-Custom"
 cd
 mkdir -p /root/udp
 
-# change to time GMT+7
 echo "change to time GMT+7"
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# install udp-custom
 echo downloading udp-custom
 wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1ixz82G_ruRBnEEp4vLPNF2KZ1k8UfrkV' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1ixz82G_ruRBnEEp4vLPNF2KZ1k8UfrkV" -O /root/udp/udp-custom && rm -rf /tmp/cookies.txt
 chmod +x /root/udp/udp-custom
@@ -799,6 +757,7 @@ RestartSec=2s
 WantedBy=default.target
 EOF
 else
+
 cat > /etc/systemd/system/udp-custom.service << EOF
 [Unit]
 Description=UDP Custom by GemilangKinasih
@@ -825,7 +784,6 @@ print_success "Install UDP-Custom"
 }
 
 function ins_restart(){
-clear
 print_install "Restarting All Service"
 /etc/init.d/nginx restart
 /etc/init.d/openvpn restart
@@ -856,9 +814,7 @@ rm -f /root/cert.pem
 print_success "Restarting All Service"
 }
 
-# INSTALL MENU
 function menu(){
-clear
 print_install "Install Menu Packages"
 wget -q ${REPO}menu/menu.zip
 unzip menu.zip
@@ -868,7 +824,6 @@ rm -rf menu
 rm -rf menu.zip
 }
 
-# MENU MENJADI DEFAULT
 function profile(){
 clear
 cat > /root/.profile << EOF
@@ -937,9 +892,7 @@ fi
 print_success "Install Menu Packages" 
 }
 
-# RESTART ALL SERVICE
 function enable_services(){
-clear
 print_install "Enable Service"
 systemctl daemon-reload
 systemctl start netfilter-persistent
@@ -953,8 +906,7 @@ systemctl restart haproxy
 print_success "Enable Service" 
 }
 
-function instal(){
-clear
+function install(){
 first_setup
 nginx_install
 haproxy_install
@@ -982,7 +934,7 @@ enable_services
 restart_system
 }
 
-instal
+install
 rm -rf /root/menu
 rm -rf /root/*.zip
 rm -rf /root/*.sh
