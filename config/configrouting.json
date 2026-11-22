@@ -200,7 +200,10 @@
   "outbounds": [
     {
       "protocol": "freedom",
-      "settings": {}
+      "settings": {
+        "domainStrategy": "UseIPv4"
+      },
+      "tag": "direct"
     },
     {
       "protocol": "blackhole",
@@ -208,16 +211,16 @@
       "tag": "blocked"
     },
     {
-      "tag": "sgdo1routing",
+      "tag": "sg1routing",
       "protocol": "vmess",
       "settings": {
         "vnext": [
           {
-            "address": "sgdo1.ordervip.cloud",
+            "address": "sg1.tokovpn.com",
             "port": 80,
             "users": [
               {
-                "id": "42519698-e06d-4642-a9ff-2df0009091fa",
+                "id": "GANTI-DENGAN-UUID-BARU-ANDA",
                 "alterId": 0,
                 "security": "none"
               }
@@ -235,49 +238,8 @@
     }
   ],
   "routing": {
-    "domainStrategy": "AsIs",
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
-      {
-        "inboundTag": [
-          "dnsIn"
-        ],
-        "outboundTag": "dnsOut",
-        "type": "field"
-      },
-      {
-        "inboundTag": [
-          "dnsQuery"
-        ],
-        "outboundTag": "direct",
-        "type": "field"
-      },
-      {
-        "outboundTag": "direct",
-        "protocol": [
-          "bittorrent"
-        ],
-        "type": "field"
-      },
-      {
-        "type": "field",
-        "outboundTag": "block",
-        "ip": [
-          "0.0.0.0/8",
-          "10.0.0.0/8",
-          "100.64.0.0/10",
-          "169.254.0.0/16",
-          "172.16.0.0/12",
-          "192.0.0.0/24",
-          "192.0.2.0/24",
-          "192.168.0.0/16",
-          "198.18.0.0/15",
-          "198.51.100.0/24",
-          "203.0.113.0/24",
-          "::1/128",
-          "fc00::/7",
-          "fe80::/10"
-        ]
-      },
       {
         "inboundTag": [
           "api"
@@ -294,151 +256,26 @@
       },
       {
         "type": "field",
-        "domain": [
-          "ipinfo.io",
-          "fast.com",
-          "youtube.com",
-          "tiktok.com",
-          "www.tiktok.com",
-          "geosite:google"
-        ],
-        "outboundTag": "sgdo1routing"
-      },
-      {
-        "type": "field",
+        "outboundTag": "blocked",
         "ip": [
-          "34.117.59.81/32",
-          "23.204.1.172/32",
-          "142.250.64.78/32",
-          "23.33.42.136/32",
-          "23.219.36.231/32",
-          "geoip:google"
-        ],
-        "outboundTag": "sgdo1routing"
-      },
-      {
-        "type": "field",
-        "outboundTag": "proxy",
-        "ip": [
-          "1.1.1.1/32",
-          "1.0.0.1/32",
-          "8.8.8.8/32",
-          "8.8.4.4/32",
-          "geoip:us",
-          "geoip:ca",
-          "geoip:cloudflare",
-          "geoip:cloudfront",
-          "geoip:facebook",
-          "geoip:fastly",
-          "geoip:google",
-          "geoip:netflix",
-          "geoip:telegram",
-          "geoip:yt",
-          "geoip:twitter"
-        ]
-      },
-      {
-        "type": "field",
-        "outboundTag": "block",
-        "ip": [
-          "0.0.0.0/8",
-          "10.0.0.0/8",
-          "100.64.0.0/10",
-          "169.254.0.0/16",
-          "172.16.0.0/12",
-          "192.0.0.0/24",
-          "192.0.2.0/24",
-          "192.168.0.0/16",
-          "198.18.0.0/15",
-          "198.51.100.0/24",
-          "203.0.113.0/24",
-          "::1/128",
-          "fc00::/7",
-          "fe80::/10"
-        ]
-      },
-      {
-        "type": "field",
-        "outboundTag": "direct",
-        "ip": [
-          "223.5.5.5/32",
-          "119.29.29.29/32",
-          "180.76.76.76/32",
-          "114.114.114.114/32",
-          "geoip:cn",
-          "geoip:jp",
-          "geoip:in",
           "geoip:private"
         ]
       },
       {
         "type": "field",
-        "outboundTag": "reject",
         "domain": [
-          "geosite:category-ads-all"
-        ]
+          "ipinfo.io",
+          "fast.com",
+          "geosite:youtube",
+          "geosite:tiktok",
+          "geosite:google"
+        ],
+        "outboundTag": "sg1routing"
       },
       {
         "type": "field",
         "outboundTag": "direct",
         "network": "tcp,udp"
-      }
-    ]
-  },
-  "stats": {},
-  "api": {
-    "services": [
-      "StatsService"
-    ],
-    "tag": "api"
-  },
-  "policy": {
-    "levels": {
-      "0": {
-        "statsUserDownlink": true,
-        "statsUserUplink": true
-      }
-    },
-    "system": {
-      "statsInboundUplink": true,
-      "statsInboundDownlink": true,
-      "statsOutboundUplink": true,
-      "statsOutboundDownlink": true
-    }
-  },
-  "dns": {
-    "hosts": {
-      "dns.google": "8.8.8.8",
-      "dns.pub": "119.29.29.29",
-      "dns.alidns.com": "223.5.5.5",
-      "geosite:category-ads-all": "127.0.0.1"
-    },
-    "servers": [
-      {
-        "address": "https://1.1.1.1/dns-query",
-        "domains": [
-          "geosite:geolocation-!cn"
-        ],
-        "expectIPs": [
-          "geoip:!cn"
-        ]
-      },
-      "8.8.8.8",
-      {
-        "address": "114.114.114.114",
-        "port": 53,
-        "domains": [
-          "geosite:cn",
-          "geosite:category-games@cn"
-        ],
-        "expectIPs": [
-          "geoip:cn"
-        ],
-        "skipFallback": true
-      },
-      {
-        "address": "localhost",
-        "skipFallback": true
       }
     ]
   }
