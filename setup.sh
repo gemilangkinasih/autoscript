@@ -274,6 +274,16 @@ print_success "Install Required Packages"
 
 function pasang_domain() {
     print_install "Install Subdomain Server"
+    if [[ -n "${1:-}" ]]; then
+        dom="$1"
+        echo "$dom" > /root/scdomain
+        echo "$dom" > /etc/xray/scdomain
+        echo "$dom" > /etc/xray/domain
+        echo "$dom" > /root/domain
+        print_success "Install Subdomain Server"
+        return
+    fi
+
     echo -e ""
     echo -e "▒█▀▀▄ ▒█▀▀▀█ ▒█▀▄▀█ ░█▀▀█ ▀█▀ ▒█▄░▒█ ░░ ▒█░▒█ ▒█▀▀█\033[0m" 
     echo -e "▒█░▒█ ▒█░░▒█ ▒█▒█▒█ ▒█▄▄█ ▒█░ ▒█▒█▒█ ▀▀ ▒█░▒█ ▒█▄▄█\033[0m" 
@@ -913,7 +923,7 @@ haproxy_install
 settings_debconf
 base_package
 make_folder_xray
-pasang_domain
+pasang_domain "${1:-}"
 password_default
 pasang_ssl
 install_xray
@@ -934,7 +944,7 @@ enable_services
 restart_system
 }
 
-install
+install "$@"
 rm -rf /root/menu
 rm -rf /root/*.zip
 rm -rf /root/*.sh
