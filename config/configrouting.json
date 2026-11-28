@@ -237,8 +237,28 @@
       }
     }
   ],
+  "observatory": {
+    "subjectSelector": [
+      "sg1routing"
+    ],
+    "probeUrl": "https://www.gstatic.com/generate_204",
+    "probeInterval": "30s",
+    "enableConcurrency": true
+  },
   "routing": {
     "domainStrategy": "IPIfNonMatch",
+    "balancers": [
+      {
+        "tag": "sg1-or-direct",
+        "selector": [
+          "sg1routing"
+        ],
+        "fallbackTag": "direct",
+        "strategy": {
+          "type": "random"
+        }
+      }
+    ],
     "rules": [
       {
         "inboundTag": [
@@ -270,7 +290,7 @@
           "geosite:tiktok",
           "geosite:google"
         ],
-        "outboundTag": "sg1routing"
+        "balancerTag": "sg1-or-direct"
       },
       {
         "type": "field",
