@@ -241,8 +241,8 @@
     "subjectSelector": [
       "sg1routing"
     ],
-    "probeUrl": "https://www.gstatic.com/generate_204",
-    "probeInterval": "30s",
+    "probeUrl": "http://connectivitycheck.gstatic.com/generate_204",
+    "probeInterval": "15s",
     "enableConcurrency": true
   },
   "routing": {
